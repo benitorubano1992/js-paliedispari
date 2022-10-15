@@ -14,7 +14,7 @@ sezione palindroma
 
 
 
-let wordToCheck=prompt("inserisci una parola")
+/*let wordToCheck=prompt("inserisci una parola")
 
 console.log(isPalindromFor(wordToCheck));
 console.log(isPalindromWhile(wordToCheck));
@@ -91,12 +91,45 @@ function isPali(word){
     return result;
 }
 
-let firstUserNumber=getRndInteger(0,5);
-console.log(firstUserNumber);
-let secondUserNumber=getRndInteger(0,5);
-console.log(secondUserNumber);
-let choice=prompt("vuoi numeri pari oppure numeri dispari");
-let result=oddOrEven(firstUserNumber,secondUserNumber);
+//let firstUserNumber=getRndInteger(0,5);
+//console.log(firstUserNumber);
+let userNumber=parseInt(prompt("inserisci un valore tra 1 e 5 "));
+let choice=prompt("scegli tra pari e dispari ");
+/*while((choice!=="pari"&&choice!="dispari")||(userNumber<1||userNumber> 5)){ versione iniziale
+    userNumber=parseInt(prompt("inserisci un valore tra 1 e 5 "));
+    choice=prompt("scegli tra pari e dispari");
+    }
+
+*/
+//versione ottimizzata in cui a seconda di quale valore non rispecchi la condinzione,richiede all'utente di rinserire un valore
+let flagChoice=false;
+let flagNum=false;
+while(!flagChoice || !flagNum){
+if(choice==="pari"||choice=="dispari"){
+    flagChoice=true;
+}
+else{
+    choice=choice=prompt("scegli tra pari e dispari ");
+    
+}
+
+console.log(choice);
+
+if(userNumber>=1 && userNumber<=5){
+    flagNum=true;
+}
+else{
+userNumber=parseInt(prompt("inserisci un valore tra 1 e 5 "));
+
+}
+console.log(userNumber);
+}
+
+
+
+let pcNumber=getRndInteger(0,5);
+
+let result=oddOrEven(userNumber,pcNumber);
 console.log(choice,result);
 if(result === choice){
     console.log("Utente ha vinto")
@@ -105,7 +138,6 @@ else
 console.log("il computer ha vinto")
 /*
 funzione che ritorna un numero compreso tra min e max inclusi
-
 */
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
