@@ -106,7 +106,7 @@ let flagChoice=false;
 let flagNum=false;
 while(!flagChoice || !flagNum){
 if(choice==="pari"||choice=="dispari"){
-    flagChoice=true;
+    flagChoice= true;
 }
 else{
     choice=choice=prompt("scegli tra pari e dispari ");
@@ -116,7 +116,7 @@ else{
 console.log(choice);
 
 if(userNumber>=1 && userNumber<=5){
-    flagNum=true;
+    flagNum= true;
 }
 else{
 userNumber=parseInt(prompt("inserisci un valore tra 1 e 5 "));
